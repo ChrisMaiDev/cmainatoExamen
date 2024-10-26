@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cmainatoExamen.Views.RegistroPage"
+             Title="RegistroPage">
+    <VerticalStackLayout Spacing="20" Padding="25">
+        <Label Text="{Binding Username}" HorizontalOptions="End" />
+        <Label Text="Registro" FontSize="22" TextColor="Blue" HorizontalOptions="Center" />
+
+        <Grid RowSpacing="10" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Fila para Nombre, Apellido y Voltiamperio -->
+            <Label Text="Nombre:" Grid.Row="0" Grid.Column="0" />
+            <Entry x:Name="nombreTxt" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Apellido:" Grid.Row="0" Grid.Column="2" />
+            <Entry x:Name="apellidoTxt" Grid.Row="0" Grid.Column="2" />
+
+            <Label Text="Voltiamperio (VA):" Grid.Row="0" Grid.Column="4" />
+            <Picker x:Name="vaPicker" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Seleccione</x:String>
+                        <x:String>500 VA</x:String>
+                        <x:String>1000 VA</x:String>
+                        <x:String>1500 VA</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Fila para Fecha y Ciudad -->
+            <Label Text="Fecha:" Grid.Row="1" Grid.Column="0" />
+            <DatePicker x:Name="fechaPicker" Grid.Row="1" Grid.Column="1" />
+
+            <Label Text="Ciudad:" Grid.Row="1" Grid.Column="2" />
+            <Picker x:Name="ciudadPicker" Grid.Row="1" Grid.Column="3">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>CUANCA</x:String>
+                        <x:String>GUAYAQUIL</x:String>
+                        <x:String>QUITO</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Fila para Monto Inicial y Cuota Mensual -->
+            <Label Text="Monto Inicial:" Grid.Row="2" Grid.Column="0" />
+            <Entry x:Name="montoInicialEntry" Grid.Row="2" Grid.Column="1" />
+
+            <Label Text="Cuota Mensual:" Grid.Row="2" Grid.Column="2" IsEnabled="False" />
+            <Entry x:Name="cuotaMensualEntry" Grid.Row="2" Grid.Column="3" IsEnabled="False" />
+        </Grid>
+
+        <Button Text="Calcular Pago Mensual" Clicked="OnCalculateClicked" />
+        <Button Text="Ver Resumen" Clicked="OnSummaryClicked" />
+    </VerticalStackLayout>
+</ContentPage>

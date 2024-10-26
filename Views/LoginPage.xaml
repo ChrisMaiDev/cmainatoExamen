@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cmainatoExamen.Views.LoginPage"
+             Title="LoginPage">
+    <VerticalStackLayout Spacing="20">
+        <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"
+        WidthRequest="200"
+        />
+
+        <Label Text="Login" FontSize="20" TextColor="Red" HorizontalOptions="Center" />
+
+        <Grid RowSpacing="10" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Usuario:" Grid.Row="0" Grid.Column="0" />
+            <Entry x:Name="txtUsuario" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Contraseña:" Grid.Row="1" Grid.Column="0" />
+            <Entry x:Name="txtContrasena" IsPassword="True" Grid.Row="1" Grid.Column="1" />
+        
+        </Grid>
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Iniciar Sesión" Clicked="OnLoginClicked" />
+            <Button Text="Acerca de" Clicked="OnAboutClicked" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
