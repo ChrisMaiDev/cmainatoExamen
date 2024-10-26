@@ -55,7 +55,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <!-- Fila para Monto Inicial y Cuota Mensual -->
+        
             <Label Text="Monto Inicial:" Grid.Row="2" Grid.Column="0" />
             <Entry x:Name="montoInicialEntry" Grid.Row="2" Grid.Column="1" />
 
